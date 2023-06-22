@@ -13,10 +13,11 @@ public class PlayerMove : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
+        
         if(step == 1)
         {
             if(Player.transform.position.x <= -2f)
