@@ -4,22 +4,50 @@ using UnityEngine;
 
 public class EnemySpawn 
 {
-    private string name;
+
+    public enum EnemyType
+    {
+        Basic = 0,
+        Range
+    }
+
+    private EnemyType enemyType;
     private int hp;
+    private int atk;
+    private float speed;
 
 
     //생성자, 파라미터(돈 넣는 구녕) 매개 변수, public 클래스명()
-    public EnemySpawn(string name, int hp)
+    public EnemySpawn(EnemyType type, string name, int hp, int atk, float speed)
     {
-        this.name = name;
+        this.enemyType = type;
         this.hp = hp;
+        this.atk = atk;
+        this.speed = speed;
     }
 
     //함수(자판기)
-    public void GetEnemyInfo()
+    public int Hp
     {
-        UnityEngine.Debug.Log($"NAME : {this.name} HP : {this.hp}");
+        get { return this.hp; }
     }
 
+    public int Atk
+    {
+        get { return this.atk; }
+    }
+
+    public float Speed
+    {
+        get { return this.speed; }
+    }
+
+    public bool Hit(int dmg)
+    {
+        if (this.hp - dmg <= 0) return false;
+
+        this.hp -= dmg;
+        return true;
+    }
 }
 
