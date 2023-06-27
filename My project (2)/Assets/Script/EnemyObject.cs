@@ -20,7 +20,7 @@ public class EnemyObject : MonoBehaviour
 
     private void Start()
     {
-        SetEnemy(new EnemySpawn(EnemySpawn.EnemyType.Basic,"fool", 100, 10, 1.5f));
+        SetEnemy(new EnemySpawn(EnemySpawn.EnemyType.Basic, 100, 10, 1.5f));
     }
     private void Update()
     {

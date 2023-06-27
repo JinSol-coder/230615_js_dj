@@ -18,7 +18,7 @@ public class EnemySpawn
 
 
     //생성자, 파라미터(돈 넣는 구녕) 매개 변수, public 클래스명()
-    public EnemySpawn(EnemyType type, string name, int hp, int atk, float speed)
+    public EnemySpawn(EnemyType type, int hp, int atk, float speed)
     {
         this.enemyType = type;
         this.hp = hp;
